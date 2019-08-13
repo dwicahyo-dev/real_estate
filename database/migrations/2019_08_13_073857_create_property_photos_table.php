@@ -15,7 +15,11 @@ class CreatePropertyPhotosTable extends Migration
     {
         Schema::create('property_photos', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('property_id');
+            $table->string('name');
             $table->timestamps();
+
+            $table->foreign('property_id')->references('id')->on('properties');
         });
     }
 

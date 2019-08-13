@@ -15,7 +15,18 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('property_type_id');
+            $table->string('name');
+            $table->text('description');
+            $table->string('location');
+            $table->decimal('price',11,2);
+            $table->enum('status', ['sale', 'not_sale'])->default('sale');
+            $table->decimal('length',5,2);
+            $table->decimal('width',5,2);
+            $table->decimal('area',5,2);
             $table->timestamps();
+
+            $table->foreign('property_type_id')->references('id')->on('property_types');
         });
     }
 

@@ -14,4 +14,6 @@ class PropertyType extends Model
     protected $fillable = [
         'name',
     ];
+
+    
 }

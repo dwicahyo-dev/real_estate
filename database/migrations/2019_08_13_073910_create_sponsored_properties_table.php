@@ -15,7 +15,13 @@ class CreateSponsoredPropertiesTable extends Migration
     {
         Schema::create('sponsored_properties', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('property_id');
+            $table->unsignedBigInteger('property_photo_id');
             $table->timestamps();
+
+            $table->foreign('property_id')->references('id')->on('properties');
+            $table->foreign('property_photo_id')->references('id')->on('property_photos');
+
         });
     }
 
