@@ -11,11 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('layouts.app');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+
+/**
+ * Routing for Admin Panel
+ */
+Route::prefix('admin')->group(function () {
+    Route::get('/', 'HomeController@indexAdmin');
+});
+
+Route::resource('property_type', 'PropertyTypeController');
+Route::resource('property', 'PropertyTypeController');
+
+
+
+// Route::get('1', 'PropertyTypeController@update');

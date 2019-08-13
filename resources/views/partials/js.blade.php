@@ -1,3 +1,4 @@
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <!-- JavaScript Libraries -->
 {{-- <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script> --}}
@@ -13,4 +14,3 @@
 <!-- Template Main Javascript File -->
 <script src="{{ asset('js/main.js') }}"></script>
 
-<script src="{{ asset('js/app.js') }}" defer></script>
