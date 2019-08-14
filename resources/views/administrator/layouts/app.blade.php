@@ -12,8 +12,7 @@
     <!-- CSS -->
     @include('administrator.partials.css')
 
-    <!-- JS -->
-    @include('administrator.partials.js')
+    
 </head>
 
 <body>
@@ -34,6 +33,12 @@
             @include('administrator.partials.footer')
         </div>
     </div>
+
+    <!-- JS -->
+    @include('administrator.partials.js')
+
+    <!-- JS -->
+    @yield('script')
 
 </body>
 

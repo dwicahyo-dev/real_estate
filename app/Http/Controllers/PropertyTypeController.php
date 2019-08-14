@@ -5,17 +5,80 @@ namespace App\Http\Controllers;
 use App\Observers\PropertyTypeObserver;
 use App\PropertyType;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Html\Builder;
+use DataTables;
 
 class PropertyTypeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['index']);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Builder $htmlBuilder)
     {
-        //
+        if ($request->ajax()) {
+            $propertyTypes = PropertyType::query();
+            return DataTables::eloquent($propertyTypes)
+                ->addIndexColumn()
+                ->editColumn('propertyTypeName', function ($propertyTypes) {
+                    return $propertyTypes->name;
+                })
+                ->addColumn('action', function ($propertyTypes) {
+                    return $propertyTypes->id;
+                    // return view(
+                    //     'inc._action',
+                    //     [
+                    //         'model' => 'property_types',
+                    //         'id' => $propertyTypes->id
+                    //     ]
+                    // );
+                })
+                ->make(true);
+        }
+
+        $html = $htmlBuilder->addColumn(
+            [
+                'data' => 'DT_RowIndex',
+                'name' => 'DT_RowIndex',
+                'title' => 'No',
+                'responsive' => true,
+                'style' => 'width:9%',
+                'orderable' => 'asc',
+                'searchable' => false
+            ]
+        );
+        $htmlBuilder->addColumn(
+            [
+                'data' => 'propertyTypeName',
+                'name' => 'name',
+                'title' => 'Property Type Name',
+                'responsive' => true,
+                'style' => 'width:60%'
+            ]
+        );
+
+        $htmlBuilder->addColumn(
+            [
+                'data' => 'action',
+                'name' => 'action',
+                'title' => 'Action',
+                'orderable' => false,
+                'searchable' => false
+            ]
+        );
+
+        return view('administrator.property_types.index', compact('html'));
     }
 
     /**

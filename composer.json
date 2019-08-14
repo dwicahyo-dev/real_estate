@@ -12,7 +12,9 @@
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "yajra/laravel-datatables-html": "^4.0",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -39,6 +41,9 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/Helpers/Helpers.php"
         ]
     },
     "autoload-dev": {

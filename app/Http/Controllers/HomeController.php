@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Property;
+use App\PropertyType;
+use App\SponsoredProperty;
+
 class HomeController extends Controller
 {
     /**
@@ -26,7 +30,12 @@ class HomeController extends Controller
 
     public function indexAdmin()
     {
-        return view('administrator.home');
+        $data = [
+            'countPropertyType' => PropertyType::count(),
+            'countProperty' => Property::count(),
+            'countSponsoredProperty' => SponsoredProperty::count()
+        ];
+        return view('administrator.home', compact('data'));
     }
 
 

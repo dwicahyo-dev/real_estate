@@ -7,16 +7,21 @@
 <script src="{{ asset('assets/modules/moment.min.js') }}"></script>
 <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
 <!-- JS Libraies -->
-<script src="{{ asset('assets/modules/simple-weather/jquery.simpleWeather.min.js') }}"></script>
-<script src="{{ asset('assets/modules/chart.min.js') }}"></script>
-<script src="{{ asset('assets/modules/jqvmap/dist/jquery.vmap.min.js') }}"></script>
-<script src="{{ asset('assets/modules/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-<script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script>
+{{-- <script src="{{ asset('assets/modules/simple-weather/jquery.simpleWeather.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/modules/chart.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/modules/jqvmap/dist/jquery.vmap.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/modules/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script> --}}
+{{-- <script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script> --}}
 <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
 
+
+
 <!-- Page Specific JS File -->
-<script src="{{ asset('assets/js/page/index-0.js') }}"></script>
+{{-- <script src="{{ asset('assets/js/page/index-0.js') }}"></script> --}}
 
 <!-- Template JS File -->
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
