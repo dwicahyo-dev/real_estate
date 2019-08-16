@@ -35,48 +35,45 @@ class PropertyTypeController extends Controller
                     return $propertyTypes->name;
                 })
                 ->addColumn('action', function ($propertyTypes) {
-                    return $propertyTypes->id;
-                    // return view(
-                    //     'inc._action',
-                    //     [
-                    //         'model' => 'property_types',
-                    //         'id' => $propertyTypes->id
-                    //     ]
-                    // );
+                    return view(
+                        'administrator.includes._action',
+                        [
+                            'model' => 'property_type',
+                            'id' => $propertyTypes->id
+                        ]
+                    );
                 })
                 ->make(true);
         }
 
-        $html = $htmlBuilder->addColumn(
-            [
-                'data' => 'DT_RowIndex',
-                'name' => 'DT_RowIndex',
-                'title' => 'No',
-                'responsive' => true,
-                'style' => 'width:9%',
-                'orderable' => 'asc',
-                'searchable' => false
-            ]
-        );
-        $htmlBuilder->addColumn(
-            [
-                'data' => 'propertyTypeName',
-                'name' => 'name',
-                'title' => 'Property Type Name',
-                'responsive' => true,
-                'style' => 'width:60%'
-            ]
-        );
-
-        $htmlBuilder->addColumn(
-            [
-                'data' => 'action',
-                'name' => 'action',
-                'title' => 'Action',
-                'orderable' => false,
-                'searchable' => false
-            ]
-        );
+        $html = $htmlBuilder
+            ->addColumn(
+                [
+                    'data' => 'DT_RowIndex',
+                    'name' => 'DT_RowIndex',
+                    'title' => 'No',
+                    'responsive' => true,
+                    'style' => 'width:9%',
+                    'orderable' => 'asc',
+                    'searchable' => false
+                ]
+            )->addColumn(
+                [
+                    'data' => 'propertyTypeName',
+                    'name' => 'name',
+                    'title' => 'Property Type Name',
+                    'responsive' => true,
+                    'style' => 'width:60%'
+                ]
+            )->addColumn(
+                [
+                    'data' => 'action',
+                    'name' => 'action',
+                    'title' => 'Action',
+                    'orderable' => false,
+                    'searchable' => false
+                ]
+            );
 
         return view('administrator.property_types.index', compact('html'));
     }
@@ -123,7 +120,7 @@ class PropertyTypeController extends Controller
      */
     public function edit(PropertyType $propertyType)
     {
-        //
+        return $propertyType;
     }
 
     /**

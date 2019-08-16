@@ -17,6 +17,7 @@
 {{-- <script src="{{ asset('assets/modules/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script> --}}
 {{-- <script src="{{ asset('assets/modules/summernote/summernote-bs4.js') }}"></script> --}}
 <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script>
+{{-- <script src="{{ asset('assets/modules/chocolat/dist/js/jquery.chocolat.min.js') }}"></script> --}}
 
 
 

@@ -7,7 +7,7 @@
 {{-- <link rel="stylesheet" href="{{ asset('assets/modules/weather-icon/css/weather-icons.min.css') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('assets/modules/weather-icon/css/weather-icons-wind.min.css') }}"> --}}
 {{-- <link rel="stylesheet" href="{{ asset('assets/modules/summernote/summernote-bs4.css') }}"> --}}
-
+<link rel="stylesheet" href="{{ asset('assets/modules/chocolat/dist/css/chocolat.css') }}">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
 
 <!-- Template CSS -->

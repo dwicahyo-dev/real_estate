@@ -11,8 +11,6 @@
 
     <!-- CSS -->
     @include('administrator.partials.css')
-
-    
 </head>
 
 <body>
@@ -37,7 +35,7 @@
     <!-- JS -->
     @include('administrator.partials.js')
 
-    <!-- JS -->
+    <!-- Script -->
     @yield('script')
 
 </body>

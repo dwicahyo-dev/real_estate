@@ -23,6 +23,12 @@
                     </i> <span>Properties</span>
                 </a>
             </li>
+
+            <li class="{{ Helpers::setSelectedSegmentTwo('sponsored_property') }}">
+                <a class="nav-link" href="{{ route('sponsored_property.index') }}"><i class="far fa-square">
+                    </i> <span>Sponsored Properties</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
