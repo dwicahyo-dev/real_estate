@@ -26,7 +26,7 @@ class Property extends Model
 
     public function photos()
     {
-        return $this->hasMany('App\PropertyPhoto');
+        return $this->hasOne('App\PropertyPhoto');
     }
 
     public function sponsoredProperty()

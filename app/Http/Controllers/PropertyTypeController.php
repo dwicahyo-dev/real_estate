@@ -85,7 +85,7 @@ class PropertyTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('administrator.property_types.create');
     }
 
     /**
@@ -109,7 +109,7 @@ class PropertyTypeController extends Controller
      */
     public function show(PropertyType $propertyType)
     {
-        //
+        return $propertyType;
     }
 
     /**

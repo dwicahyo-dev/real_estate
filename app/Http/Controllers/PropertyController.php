@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 
 class PropertyController extends Controller
 {
-    protected $filePath = 'property_photos';
+    // protected $filePath = 'property_photos';
+    protected $filePath = 'public/photos/';
     /**
      * Create a new controller instance.
      *
@@ -38,12 +39,14 @@ class PropertyController extends Controller
                 ->editColumn('propertyType.name', function ($properties) {
                     return $properties->propertyType->name;
                 })
-                ->addColumn('propertyType.photos', function ($properties) {
-                    // return $properties->photos;
+                ->editColumn('propertyType.photos', function ($properties) {
+
+                //    return $properties->photos;
                     return view(
                         'administrator.includes._images',
                         [
-                            'src' => $properties->photos
+                            'src' => $properties->photos->property_id,
+                            'path' => $this->filePath
                         ]
                     );
                 })
