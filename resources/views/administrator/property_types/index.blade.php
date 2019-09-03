@@ -14,6 +14,7 @@
         <h2 class="section-title">Table Property Types</h2>
 
         <div class="col-12 col-md-12 col-lg-12">
+            @include('partials.alert_success')
 
             <div class="card card-primary">
                 <div class="card-header">

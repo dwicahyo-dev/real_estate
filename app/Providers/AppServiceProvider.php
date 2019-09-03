@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PropertyType::observe(PropertyTypeObserver::class);
+        // PropertyType::observe(PropertyTypeObserver::class);
     }
 }

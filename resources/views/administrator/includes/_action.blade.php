@@ -1,4 +1,4 @@
-<a href="{{route($model . '.edit', $id)}}" title="Edit" class="btn btn-warning">
+<a href="{{ route($model . '.edit', $id) }}" title="Edit" class="btn btn-warning">
     <i class="fas fa-pencil-alt"></i>
 </a>
 <a href="javascript:void(0)" model="{{ $model }}" id="btnDelete" onclick="deleteData({{ $id }})" class="btn btn-danger"

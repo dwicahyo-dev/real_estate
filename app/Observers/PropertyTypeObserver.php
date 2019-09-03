@@ -14,8 +14,7 @@ class PropertyTypeObserver
      */
     public function created(PropertyType $propertyType)
     {
-        // $propertyType->name;
-        // $propertyType->save();
+        $propertyType->name;
     }
 
     /**
@@ -27,7 +26,6 @@ class PropertyTypeObserver
     public function updated(PropertyType $propertyType)
     {
         $propertyType->name;
-        $propertyType->update();
     }
 
     /**

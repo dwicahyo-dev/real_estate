@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Observers\PropertyTypeObserver;
+use App\Http\Requests\PropertyTypeRequest;
 use App\PropertyType;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Html\Builder;
@@ -94,11 +94,14 @@ class PropertyTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, PropertyTypeObserver $propertyTypeObserver)
+    public function store(PropertyTypeRequest $request)
     {
-        // PropertyType::create($request->all());
+        PropertyType::create([
+            'name' => $request->name
+        ]);
 
-        $propertyTypeObserver->create($request->all());
+        return redirect()->route('property_type.index')
+            ->with('success', 'Property Type created!');
     }
 
     /**
@@ -109,7 +112,7 @@ class PropertyTypeController extends Controller
      */
     public function show(PropertyType $propertyType)
     {
-        return $propertyType;
+        return abort(404);
     }
 
     /**
@@ -120,7 +123,7 @@ class PropertyTypeController extends Controller
      */
     public function edit(PropertyType $propertyType)
     {
-        return $propertyType;
+        return view('administrator.property_types.edit', compact('propertyType'));
     }
 
     /**
@@ -132,10 +135,10 @@ class PropertyTypeController extends Controller
      */
     public function update(Request $request, PropertyType $propertyType)
     {
-        // $propertyType->name = 'dsfsadfzzz';
-        $propertyType->update([
-            'name' => 'dsafadsf'
-        ]);
+        $propertyType->update($request->all());
+
+        return redirect()->route('property_type.index')
+            ->with('success', 'Property Type updated!');
     }
 
     /**
@@ -146,6 +149,13 @@ class PropertyTypeController extends Controller
      */
     public function destroy(PropertyType $propertyType)
     {
-        //
+        $propertyType->delete();
+
+        $response = [
+            'success' => TRUE,
+            'message' => 'Property Type deleted!'
+        ];
+
+        return response()->json($response);
     }
 }

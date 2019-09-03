@@ -15,5 +15,9 @@ class PropertyType extends Model
         'name',
     ];
 
-    
+    public function properties()
+    {
+        return $this->hasMany('App\Property');
+    }
+
 }
