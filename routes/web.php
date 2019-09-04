@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index');
 /**
  * Routing for Admin Panel
  */
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@indexAdmin')->name('admin.home');
     Route::resource('property_type', 'PropertyTypeController');
     Route::resource('property', 'PropertyController');
