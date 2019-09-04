@@ -24,7 +24,7 @@ class PropertyTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required|unique:property_types',
         ];
     }
 
@@ -37,6 +37,7 @@ class PropertyTypeRequest extends FormRequest
     {
         return [
             'name.required' => 'The property type name is required.',
+            'name.unique' => 'The property type name has already been taken.',
         ];
     }
 }

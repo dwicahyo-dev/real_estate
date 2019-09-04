@@ -39,10 +39,7 @@
 			if (result.value) {
 				axios.delete(`${url}/${id}`)
 				.then(function (response) {
-					Swal('Success!', `${response.data.message}`,'success')
-					.then(() => {
-                        $('#dataTableBuilder').DataTable().ajax.reload();
-					})
+					Swal('Success!', `${response.data.message}`,'success');
 				})
 				.catch(function (error) {
 					Swal({
@@ -50,7 +47,10 @@
 						title: 'Oops...',
 						text: 'Gagal Menghapus Data',
 					})
-				});
+				})
+                .finally(() => {
+                    $('#dataTableBuilder').DataTable().ajax.reload();
+                });
 			}
 		});
     }

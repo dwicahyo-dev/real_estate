@@ -133,7 +133,7 @@ class PropertyTypeController extends Controller
      * @param  \App\PropertyType  $propertyType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PropertyType $propertyType)
+    public function update(PropertyTypeRequest $request, PropertyType $propertyType)
     {
         $propertyType->update($request->all());
 

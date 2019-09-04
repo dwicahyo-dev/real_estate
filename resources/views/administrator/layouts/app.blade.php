@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>General Dashboard &mdash; Stisla</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <title>@yield('title') &mdash; Real Estate</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- CSS -->
-    @include('administrator.partials.css')
-</head>
+        <!-- CSS -->
+        @include('administrator.partials.css')
+    </head>
 
-<body>
-    <div id="app">
-        <div class="main-wrapper main-wrapper-1">
-            <!-- NAVBAR -->
-            @include('administrator.partials.navbar')
+    <body>
+        <div id="app">
+            <div class="main-wrapper main-wrapper-1">
+                <!-- NAVBAR -->
+                @include('administrator.partials.navbar')
 
-            <!-- SIDEBAR -->
-            @include('administrator.partials.sidebar')
+                <!-- SIDEBAR -->
+                @include('administrator.partials.sidebar')
 
-            <!-- Main Content -->
-            <div class="main-content">
-                @yield('content')
+                <!-- Main Content -->
+                <div class="main-content">
+                    @yield('content')
+                </div>
+
+                <!-- FOOTER -->
+                @include('administrator.partials.footer')
             </div>
-
-            <!-- FOOTER -->
-            @include('administrator.partials.footer')
         </div>
-    </div>
 
-    <!-- JS -->
-    @include('administrator.partials.js')
+        <!-- JS -->
+        @include('administrator.partials.js')
 
-    <!-- Script -->
-    @yield('script')
+        <!-- Script -->
+        @yield('script')
 
-</body>
+    </body>
 
 </html>

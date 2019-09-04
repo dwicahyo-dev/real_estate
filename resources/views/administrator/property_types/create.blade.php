@@ -1,5 +1,7 @@
 @extends('administrator.layouts.app')
 
+@section('title', 'Create Property Type')
+
 @section('content')
 <section class="section">
     <div class="section-header">
@@ -11,11 +13,12 @@
     </div>
 
     <div class="section-body">
-        <h2 class="section-title">Form Create Property Types</h2>
+        <h2 class="section-title">Create Form Property Types</h2>
 
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card card-primary">
                 <div class="card-body">
+
                     @include('partials.alert_error')
 
                     <form action="{{ route('property_type.store') }}" method="POST">
@@ -24,7 +27,7 @@
                             <label>Property Type Name</label>
                             <input type="text" name="name"
                                 class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                placeholder="Property Type Name" autofocus>
+                                value="{{ old('name') }}" placeholder="Property Type Name" autofocus>
                         </div>
                         <button class="btn btn-primary mr-1" type="submit">Submit</button>
                         <a href="{{ route('property_type.index') }}" role="button" class="btn btn-danger">Cancel</a>

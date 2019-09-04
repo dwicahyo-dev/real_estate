@@ -1,5 +1,7 @@
 @extends('administrator.layouts.app')
 
+@section('title', 'Edit Property Type')
+
 @section('content')
 <section class="section">
     <div class="section-header">
@@ -11,7 +13,7 @@
     </div>
 
     <div class="section-body">
-        <h2 class="section-title">Form Adding Property Types</h2>
+        <h2 class="section-title">Edit Form Property Types</h2>
 
         <div class="col-12 col-md-12 col-lg-12">
             <div class="card card-primary">

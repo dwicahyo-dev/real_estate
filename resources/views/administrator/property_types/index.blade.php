@@ -1,5 +1,7 @@
 @extends('administrator.layouts.app')
 
+@section('title', 'Property Types')
+
 @section('content')
 <section class="section">
     <div class="section-header">
